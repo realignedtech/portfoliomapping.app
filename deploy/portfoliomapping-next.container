@@ -1,0 +1,17 @@
+[Unit]
+Description=Denkplan Portfolio Maps static production site
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=localhost/portfoliomapping-next:1
+ContainerName=portfoliomapping-next
+Network=windshift.network
+LogDriver=journald
+
+[Service]
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target default.target

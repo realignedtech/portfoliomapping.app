@@ -1,0 +1,104 @@
+{
+  "freevspro": {
+    "title1": "Features",
+    "features1": [
+      "Multiple story maps per project",
+      "Use any Jira Issue & Link Type",
+      "Add top level goals & activities",
+      "Map issues to custom field values",
+      "Customize the card layout",
+      "Configurable swimlanes",
+      "Epic and swimlane statistics"
+    ],
+    "title2": "Other benefits",
+    "features2": [
+      "Priority support",
+      "High availability setup",
+      "Data Center certified"
+    ]
+  },
+  "news": [{
+    "month": "July 2022",
+    "title": "Free app improvements",
+    "content": [
+      {
+        "type": "text",
+        "content": "Story Maps for Jira - Free got a major overhaul. Read about all the changes in our blog"
+      },
+      {
+        "type": "link",
+        "title": "Latest Blog Post",
+        "href": "https://www.storymapping.app/articles/story-maps-for-jira-is-all-new?utm_source=InApp"
+      }
+    ]
+  },
+    {
+      "month": "May 2022",
+      "title": "Major updates and a new name",
+      "content": [
+        {
+          "type": "text",
+          "content": "Story Mapping for Jira - Pro is now Advanced Story Maps for Jira! \n\nWe have added a significant new feature to this release: Dynamic maps.\nYou can now load any agile board and manage epics, stories, tasks, and their issue links on the fly, and all changes will now reflect 100% into the agile board. Additionally, managing the app configuration has gotten much easier - use the new hierarchy button in the top right-hand corner to modify the map's issue hierarchy and link types. The changes will appear instantly in the map view."
+        },
+        {
+          "type": "link",
+          "title": "Full release notes",
+          "href": "https://www.storymapping.app/docs/release-notes?utm_source=InAppWhatsNew"
+        }
+      ]
+    },
+    {
+      "month": "December 2021",
+      "title": "Big news for starter tiers",
+      "content": [
+        {
+          "type": "text",
+          "content": "We have made the Pro Version available free for up to 10 users. Check it out on the marketplace!"
+        },
+        {
+          "type": "link",
+          "title": "Story Mapping for Jira - Pro",
+          "href": "https://marketplace.atlassian.com/1224417"
+        }
+      ]
+    },
+    {
+      "month": "November 2021",
+      "title": "Minor Improvements 11/21",
+      "isPro": true,
+      "isFree": true,
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "The top bar has been re-arranged to give you more vertical space for the story map",
+            "Issues now open in a modal dialog and can be modified on the fly.",
+            "Fixed a bug that prevented maps from loading when an invalid quick filter was active"
+          ]
+        }
+      ]
+    },
+
+    {
+      "month": "November 2021",
+      "title": "Pro Version Improvements 11/21",
+      "isPro": true,
+      "isFree": false,
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "Our most requested feature is here: You can now manage multiple user story maps in one project.",
+            "Introducing epic statistics: See the progress of your issues within an epic. Toggle between\ntotals per status, percentage of issues per status completed or percentage of story points done.",
+            "Sub-task support: You can now display the number of subtasks on the issue card, alongside a link that reveals all subtasks and their status"
+            ]
+        },
+        {
+          "type": "link",
+          "title": "Read the full release notes",
+          "href": "https://www.storymapping.app/docs/release-notes?utm_source=InAppWhatsNew"
+        }
+      ]
+    }
+  ]
+}

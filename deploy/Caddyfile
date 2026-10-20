@@ -1,0 +1,44 @@
+# Denkplan Portfolio Maps (portfoliomapping.app).
+#
+# Traefik terminates TLS and proxies here over windshift.network, so Caddy
+# only ever speaks plain HTTP on :8075.
+:8075 {
+	root * /srv
+
+	encode gzip zstd
+
+	# adapter-static emits flat .html files. Normalize trailing-slash requests
+	# before try_files sees a matching directory (for example /docs/), otherwise
+	# Caddy attempts to serve the directory and returns 404.
+	#
+	# Backslashes are excluded: browsers treat "\" like "/" when resolving a
+	# redirect, so echoing one back would turn this into an open redirect:
+	# "/%5Cevil.com/" would become "Location: /\evil.com" and resolve to
+	# https://evil.com. No route uses a backslash, so those requests fall
+	# through to a real 404 instead of being redirected.
+	@trailingSlash {
+		path_regexp trailingSlash ^(.+)/$
+		not path_regexp backslash `(?i)(\\|%5c)`
+	}
+	redir @trailingSlash {re.trailingSlash.1} 308
+
+	# Everything under _app/immutable is content-hashed by SvelteKit.
+	header /_app/immutable/* Cache-Control "public, max-age=31536000, immutable"
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Frame-Options DENY
+		Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=(), usb=()"
+		Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self' https://data.windshift.dev; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline' https://data.windshift.dev; style-src 'self' 'unsafe-inline'; worker-src 'self' blob:"
+	}
+
+	# adapter-static emits flat files — /docs/support is docs/support.html.
+	# Resolve those before 404ing. Unknown paths then reach file_server, which
+	# answers with its own 404 (the prerendered 404.html is for hosts that
+	# consume it, such as Netlify).
+	try_files {path} {path}.html {path}/index.html
+	file_server
+
+	log
+}
