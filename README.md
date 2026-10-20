@@ -13,7 +13,17 @@ npm run dev
 
 ```bash
 npm run check
-npm run build
+npm run build          # also regenerates build/sitemap.xml
+npm run verify:export  # acceptance checks against build/
 ```
 
 The generated static site is written to `build/`.
+
+## Deployment
+
+`deploy/` and `scripts/deploy.sh` mirror the `storymapping-next` container
+route: Caddy serving the prerendered export on :8075 behind Traefik. The
+deploy script builds, ships the container to the web host, restarts the
+service, then runs `scripts/verify-production.mjs` against
+https://portfoliomapping.app. Rollout itself is tracked as MA-91 in the
+Windshift marketing workspace.

@@ -14,7 +14,7 @@ The Atlassian Marketplace listing is `1226527`. Installation, evaluation, licens
 - mdsvex documentation routes
 - Shared Realigned navigation, footer, Trust Center, SEO, and Umami patterns from the Story Mapping site
 
-The legacy Next.js site at `../portfoliomapping` remains the content source during migration. This workspace is the new implementation and must not invent capabilities, customer claims, or proof that are absent from the product documentation.
+The legacy Next.js site (source `stefan-ernst/storymapping-site-2`, `sites/portfoliomapping`, still live on Netlify during rollout) is the content source of record. This workspace is the new implementation and must not invent capabilities, customer claims, or proof that are absent from the product documentation.
 
 ## Brand and URLs
 
@@ -23,7 +23,7 @@ The legacy Next.js site at `../portfoliomapping` remains the content source duri
 - Marketplace: `https://marketplace.atlassian.com/apps/1226527`
 - Product icon: `/denkplan.png`
 - Social image: `/DenkplanOG2.png`
-- Publisher: Realigned Technologies Ltd.
+- Publisher: Realigned Technologies GmbH (Atlassian Marketplace vendor: Realigned Technologies Ltd.)
 
 ## Principles
 
