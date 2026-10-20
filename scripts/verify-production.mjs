@@ -16,10 +16,11 @@ for (const route of routes) {
 	assert.equal(canonical, `https://portfoliomapping.app${route}`, `${route}: canonical ${canonical}`);
 }
 
-// Trailing-slash requests canonicalize to the established URLs.
+// Trailing-slash requests canonicalize to the established URLs. 301 matches
+// the status the previous Netlify origin answered these with.
 for (const route of ['/docs/', '/trust/', '/blog/']) {
 	const response = await fetch(`${origin}${route}`, { redirect: 'manual' });
-	assert.equal(response.status, 308, `${route}: ${response.status}`);
+	assert.equal(response.status, 301, `${route}: ${response.status}`);
 	assert.equal(new URL(response.headers.get('location'), origin).pathname, route.slice(0, -1));
 }
 

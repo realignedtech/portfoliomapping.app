@@ -8,8 +8,10 @@
 #   npm run deploy
 #
 # Environment:
-#   SSH_TARGET=core@windshift.sh   override the host
-#   SSH_KEY=~/.ssh/id_rsa_hawaii   override the SSH key
+#   SSH_TARGET=core@windshift.sh       override the host
+#   SSH_KEY=~/.ssh/id_rsa_hawaii       override the SSH key
+#   VERIFY_ORIGIN=https://...          verify a non-production origin
+#   VERIFY_ORIGIN=skip                 skip verification (pre-DNS-cut migration)
 
 set -euo pipefail
 
@@ -79,7 +81,14 @@ scp -i "$ssh_key" -o IdentitiesOnly=yes "$quadlet" "$ssh_target:/tmp/${name}.con
 step "Verify deployment"
 (
 	cd "$repo_root"
-	node scripts/verify-production.mjs https://portfoliomapping.app
+	# VERIFY_ORIGIN=skip during a migration whose DNS has not been cut yet:
+	# production still answers on the old origin, so live verification runs
+	# after the cutover instead (npm run verify:production).
+	if [ "${VERIFY_ORIGIN:-}" = "skip" ]; then
+		echo "verify skipped (VERIFY_ORIGIN=skip) — run verify:production after the DNS cutover"
+	else
+		node scripts/verify-production.mjs "${VERIFY_ORIGIN:-https://portfoliomapping.app}"
+	fi
 )
 
 step "Done: https://portfoliomapping.app"

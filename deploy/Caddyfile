@@ -16,11 +16,14 @@
 	# "/%5Cevil.com/" would become "Location: /\evil.com" and resolve to
 	# https://evil.com. No route uses a backslash, so those requests fall
 	# through to a real 404 instead of being redirected.
+	#
+	# 301 matches the status the Netlify origin answered trailing-slash
+	# requests with for years; search engines treat 301 and 308 identically.
 	@trailingSlash {
 		path_regexp trailingSlash ^(.+)/$
 		not path_regexp backslash `(?i)(\\|%5c)`
 	}
-	redir @trailingSlash {re.trailingSlash.1} 308
+	redir @trailingSlash {re.trailingSlash.1} 301
 
 	# Everything under _app/immutable is content-hashed by SvelteKit.
 	header /_app/immutable/* Cache-Control "public, max-age=31536000, immutable"
