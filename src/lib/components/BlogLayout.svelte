@@ -42,5 +42,14 @@
 	.docs-content :global(li) { margin: .45rem 0; }
 	.docs-content :global(li::marker) { color: #38bdf8; }
 	.docs-content :global(a) { color: #7dd3fc; text-decoration: underline; text-underline-offset: 3px; }
+	/* Heading anchors (rehype wrap) and the CTA button are links too; keep
+	   prose styling off them. */
+	.docs-content :global(h2 a),
+	.docs-content :global(h3 a),
+	.docs-content :global(h4 a) { color: inherit; text-decoration: none; }
+	.docs-content :global(h2 a:hover),
+	.docs-content :global(h3 a:hover),
+	.docs-content :global(h4 a:hover) { color: inherit; text-decoration: none; }
+	.docs-content :global(a.realigned-primary-button) { color: white; text-decoration: none; }
 	.docs-content :global(img) { width: 100%; height: auto; margin: 2rem auto; border: 1px solid rgba(156,180,211,.2); border-radius: .6rem; box-shadow: 0 14px 30px rgba(2,18,42,.28); }
 </style>
