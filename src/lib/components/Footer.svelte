@@ -30,9 +30,6 @@
 					<li>
 						<a class="transition-colors hover:text-white" href="https://marketplace.atlassian.com/apps/1226527" target="_blank" rel="noreferrer">Atlassian Marketplace</a>
 					</li>
-					<li>
-						<a class="transition-colors hover:text-white" href="https://demo.userstorymap.net/projects/DPFJ?selectedItem=tech.realigned.portfoliomap:sidebar-item#/map/1663578993374" target="_blank" rel="noreferrer">Live demo</a>
-					</li>
 				</ul>
 			</div>
 			<div>

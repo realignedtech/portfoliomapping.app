@@ -12,7 +12,6 @@
 		meta = {},
 		title = 'Denkplan Portfolio Maps',
 		marketplaceLink = 'https://marketplace.atlassian.com/apps/1226527',
-		demoLink = '',
 		children
 	} = $props();
 
@@ -67,7 +66,6 @@
 	{description}
 	{jsonLd}
 	navTitle={title}
-	{demoLink}
 	{marketplaceLink}
 	highlight="Documentation"
 	wide

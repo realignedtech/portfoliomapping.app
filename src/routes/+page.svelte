@@ -5,7 +5,6 @@
 	import { softwareApplicationSchema } from '$lib/seo/schema.js';
 
 	const MARKETPLACE_LINK = 'https://marketplace.atlassian.com/apps/1226527';
-	const DEMO_LINK = 'https://demo.userstorymap.net/projects/DPFJ?selectedItem=tech.realigned.portfoliomap:sidebar-item#/map/1663578993374';
 	const HEAD_TITLE = 'Denkplan Portfolio Maps for Jira - Strategy and Jira Work';
 
 	// Stated in machine-readable form so search engines and AI systems attribute
@@ -60,7 +59,6 @@
 					</p>
 					<div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
 						<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" data-umami-event="marketplace_click" data-umami-event-product="portfolio_maps" data-umami-event-listing-id="1226527" data-umami-event-intent="trial" data-umami-event-source-page="/" data-umami-event-placement="homepage_hero" class="realigned-primary-button text-base">Start a free trial</a>
-						<a href={DEMO_LINK} target="_blank" rel="noreferrer" data-umami-event="demo_click" data-umami-event-product="portfolio_maps" data-umami-event-source-page="/" data-umami-event-placement="homepage_hero" class="realigned-secondary-button text-base">Explore the live demo</a>
 					</div>
 				</div>
 
@@ -118,10 +116,9 @@
 			<DottedClouds opacity={0.12} />
 			<div class="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 				<h2 id="final-cta-title" class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Put strategy and delivery on the same map.</h2>
-				<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80">Try Denkplan Portfolio Maps in Jira, or explore the public demo before installing.</p>
+				<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80">Try Denkplan Portfolio Maps in Jira.</p>
 				<div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
 					<a href={MARKETPLACE_LINK} target="_blank" rel="noreferrer" class="realigned-primary-button">Start a free trial</a>
-					<a href={DEMO_LINK} target="_blank" rel="noreferrer" class="realigned-secondary-button">Explore the live demo</a>
 				</div>
 			</div>
 		</section>

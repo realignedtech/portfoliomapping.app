@@ -43,4 +43,4 @@ Additionally, you can create releases or custom iterations directly from the por
 
 Portfolio Maps for Jira lets you choose the way you want to work. Suppose you have an existing Jira setup with pre-defined workflows, screens, issue types, or link configurations. In that case, you can adapt your portfolio map fully to what is already available in Jira. Or - if you are starting with portfolio management in Jira, the app will help you to manage your portfolio according to best practices.
 
-Do you want to try Portfolio Maps for Jira? The app is free to evaluate. Head over to the [Atlassian Marketplace](https://marketplace.atlassian.com/1226527) to try it out. Or use our [public demo instance](https://demo.userstorymap.net/projects/DPFJ?selectedItem=tech.realigned.portfoliomap:sidebar-item#/map/1663578993374) to learn more about how the app works and see a Jira project portfolio in practice.
+Do you want to try Portfolio Maps for Jira? The app is free to evaluate. Head over to the [Atlassian Marketplace](https://marketplace.atlassian.com/1226527) to try it out and see how it works on your own Jira project portfolio.
