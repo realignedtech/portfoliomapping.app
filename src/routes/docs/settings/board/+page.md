@@ -1,6 +1,6 @@
 ---
 title: "Board Configuration"
-description: "How the board configuration works: columns, swimlanes, and issue sources for a board-backed portfolio map."
+description: "How the board configuration works for a board-backed portfolio map: columns, swimlanes, issue sources, and what each setting changes."
 ---
 
 Configuring your board is a pivotal step to tailor your portfolio maps to your project's specific needs. This guide will walk you through selecting a Jira board as the base for your map, which will influence the filters, sprints, releases, and issues displayed.

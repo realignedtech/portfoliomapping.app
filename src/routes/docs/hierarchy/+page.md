@@ -1,6 +1,6 @@
 ---
 title: "Hierarchy & Top-level Elements"
-description: "Using the different levels of the portfolio map hierarchy to connect goals, initiatives, and delivery work in one view."
+description: "Using the different levels of the portfolio map hierarchy to connect goals, initiatives, and delivery work in one connected Jira view."
 ---
 
 ### Basics
