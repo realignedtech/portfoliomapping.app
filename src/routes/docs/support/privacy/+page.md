@@ -1,6 +1,6 @@
 ---
 title: "Privacy Information"
-description: "Denkplan Portfolio Maps privacy information."
+description: "Denkplan Portfolio Maps privacy information: what data the app processes, where it is stored, and how Realigned handles it."
 ---
 
 Please find the Data Privacy Statement for Realigned Technologies Website [here](https://realigned.io/privacy).

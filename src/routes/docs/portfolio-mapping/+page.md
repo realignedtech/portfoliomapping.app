@@ -1,6 +1,6 @@
 ---
 title: "Using the App"
-description: "Overview on how to use Denkplan Portfolio Maps for Jira"
+description: "Overview of how to use Denkplan Portfolio Maps for Jira: plan across projects, shape releases visually, and edit issues from the map."
 ---
 
 ### Introduction

@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "Manage multiple portfolio maps inside a single Jira project."
+description: "Manage multiple portfolio maps inside a single Jira project: create, rename, open by default, and remove maps from the overview screen."
 ---
 
 You can manage multiple maps inside a single project. You will be presented with the overview screen when opening the app for the first time or if the project does not contain any story maps.

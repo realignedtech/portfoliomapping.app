@@ -1,6 +1,6 @@
 ---
 title: "Multiple Projects"
-description: "Using the portfolio map across multiple projects"
+description: "Using the portfolio map across multiple Jira projects: pull issues from several projects into one view without merging boards."
 ---
 
 A few things need to be considered for your portfolio map to work well for multiple projects.

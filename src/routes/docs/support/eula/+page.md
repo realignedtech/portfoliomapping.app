@@ -1,6 +1,6 @@
 ---
 title: "End User License Agreement"
-description: "This End-User License Agreement (\"EULA\") is a legal agreement between you and Realigned Technologies Ltd"
+description: "The End-User License Agreement between you and Realigned Technologies Ltd for Denkplan Portfolio Maps for Jira."
 ---
 
 This End-User License Agreement ("EULA") is a legal agreement between you and Realigned Technologies Ltd

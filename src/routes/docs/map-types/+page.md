@@ -1,6 +1,6 @@
 ---
 title: "Map Types"
-description: "Portfolio Maps for Jira offers two different types of a portfolio map"
+description: "Portfolio Maps for Jira offers two types of portfolio map: a static map built from your issue hierarchy, and a board-backed map."
 ---
 
 ## Introduction

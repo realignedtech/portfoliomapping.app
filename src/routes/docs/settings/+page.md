@@ -1,6 +1,6 @@
 ---
 title: "Settings"
-description: "Denkplan Portfolio Maps settings explained."
+description: "Denkplan Portfolio Maps settings explained: board configuration, custom fields, swimlanes, and permissions for your Jira project."
 ---
 
 The following section explains the many possible settings for your user story map

@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Common issues and questions"
+description: "Common issues and questions about Denkplan Portfolio Maps for Jira, with fixes for setup, configuration, and map rendering."
 ---
 
 ### The Release button is not visible

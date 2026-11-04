@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "Get started with Denkplan Portfolio Maps for Jira."
+description: "Get started with Denkplan Portfolio Maps for Jira: install the app, create your first portfolio map, and configure the hierarchy."
 ---
 
 After installation, the app will be available in all projects.
