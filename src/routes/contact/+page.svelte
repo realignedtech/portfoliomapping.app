@@ -51,7 +51,7 @@
 
 <SiteShell
 	headTitle="Contact Realigned Technologies | Denkplan Portfolio Maps"
-	description="Contact Realigned Technologies for Denkplan Portfolio Maps for Jira support, licensing, vendor information, and general enquiries. Email, support portal, and LinkedIn."
+	description="Contact Realigned Technologies for Denkplan Portfolio Maps for Jira support, licensing, and general enquiries by email, support portal, or LinkedIn."
 	jsonLd={structuredData}
 >
 	<main class="bg-[var(--bg-base)] text-[var(--text-primary)]">
