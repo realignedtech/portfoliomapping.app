@@ -3,7 +3,7 @@
 	const marketplaceLink = 'https://marketplace.atlassian.com/apps/1226527';
 </script>
 
-<SiteShell headTitle="Portfolio Mapping for Jira blog" description="Guides and practical advice for portfolio management in Jira." highlight="Blog" {marketplaceLink}>
+<SiteShell headTitle="Portfolio Mapping for Jira blog" description="Guides and practical advice for portfolio management in Jira: how to connect strategy, goals, and delivery work without leaving Jira Software." highlight="Blog" {marketplaceLink}>
 	<main class="realigned-band min-h-[60vh] px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
 		<div class="mx-auto max-w-5xl">
 			<p class="text-sm font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">Portfolio Mapping blog</p>

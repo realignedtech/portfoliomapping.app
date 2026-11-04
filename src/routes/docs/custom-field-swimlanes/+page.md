@@ -1,6 +1,6 @@
 ---
 title: "Custom Field Swimlanes"
-description: "Using Jira custom field options as swimlanes for your portfolio map"
+description: "Using Jira custom field options as swimlanes for your portfolio map: group work by any field your team already maintains, without extra tooling."
 ---
 
 ## Introduction

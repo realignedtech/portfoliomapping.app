@@ -3,7 +3,7 @@ export const trustNavigation = [
 		href: '/trust',
 		title: 'Trust Center',
 		navTitle: 'Overview',
-		description: 'Security, privacy, and compliance information in one place.'
+		description: 'Security, privacy, and compliance information for Denkplan Portfolio Maps for Jira: policies, scanning practices, and how we handle your data.'
 	},
 	{
 		href: '/trust/security-policy',

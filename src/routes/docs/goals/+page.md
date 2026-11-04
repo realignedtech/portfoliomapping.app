@@ -1,6 +1,6 @@
 ---
 title: "Swimlane Goals"
-description: "Set goals and define outcomes based on iterations or releases"
+description: "Set goals and define outcomes based on iterations or releases, then track them alongside the portfolio work that delivers them."
 ---
 
 The Swimlane Goals feature in Denkplan Portfolio Maps offers a practical way to align your team's efforts with broader objectives.

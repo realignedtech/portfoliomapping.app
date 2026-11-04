@@ -37,7 +37,7 @@
 
 <SiteShell
 	headTitle={HEAD_TITLE}
-	description="Connect goals, initiatives, releases, and Jira delivery work in one visual portfolio map."
+	description="Connect goals, initiatives, releases, and Jira delivery work in one visual portfolio map — see your whole Jira portfolio as one plan."
 	marketplaceLink={MARKETPLACE_LINK}
 >
 	<main class="bg-[var(--bg-base)] text-[var(--text-primary)]">

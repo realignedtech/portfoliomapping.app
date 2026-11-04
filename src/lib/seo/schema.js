@@ -67,7 +67,7 @@ export function softwareApplicationSchema({
 	};
 }
 
-export function techArticleSchema({ headline, description, url, keywords, product, datePublished = '2026-10-20T00:00:00.000Z' }) {
+export function techArticleSchema({ headline, description, url, keywords, product, datePublished }) {
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'TechArticle',
@@ -75,8 +75,7 @@ export function techArticleSchema({ headline, description, url, keywords, produc
 		headline,
 		description,
 		url,
-		datePublished,
-		dateModified: datePublished,
+		...(datePublished ? { datePublished, dateModified: datePublished } : {}),
 		image: [`${siteOrigin}/DenkplanOG2.png`],
 		inLanguage: 'en',
 		...(keywords ? { keywords } : {}),
