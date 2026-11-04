@@ -1,6 +1,6 @@
 ---
 title: "Administrators Guide"
-description: "Global settings explained"
+description: "Global settings for Denkplan Portfolio Maps for Jira explained: board configuration, custom fields, and permissions."
 ---
 
 ## Global configuration

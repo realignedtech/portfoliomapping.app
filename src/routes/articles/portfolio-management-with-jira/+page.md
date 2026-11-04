@@ -1,6 +1,6 @@
 ---
 title: "How to do Portfolio Management with Jira Software"
-description: "Looking for ways to do project portfolio management in Atlassian Jira? Portfolio Maps for Jira can be installed in seconds, providing you with everything to get you started"
+description: "Looking for ways to do project portfolio management in Atlassian Jira? Portfolio Maps for Jira installs in seconds and gives you everything to get started."
 date: 1665056285111
 ---
 

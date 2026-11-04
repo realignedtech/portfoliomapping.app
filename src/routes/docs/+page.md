@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "A short introduction to portfolio mapping in Jira"
+description: "A short introduction to portfolio mapping in Jira: how a portfolio map connects strategy, goals, and delivery work inside Jira Software."
 ---
 
 A project portfolio management process allows an organization to assess the effectiveness of its projects and find ways to improve them.

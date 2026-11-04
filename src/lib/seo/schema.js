@@ -67,6 +67,25 @@ export function softwareApplicationSchema({
 	};
 }
 
+export function techArticleSchema({ headline, description, url, keywords, product, datePublished = '2026-10-20T00:00:00.000Z' }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'TechArticle',
+		name: product ? `${headline} (${product})` : headline,
+		headline,
+		description,
+		url,
+		datePublished,
+		dateModified: datePublished,
+		image: [`${siteOrigin}/DenkplanOG2.png`],
+		inLanguage: 'en',
+		...(keywords ? { keywords } : {}),
+		isPartOf: { '@id': `${siteOrigin}/#website` },
+		author: { '@id': `${siteOrigin}/#organization` },
+		publisher: { '@id': `${siteOrigin}/#organization` }
+	};
+}
+
 export function articleSchema({ headline, description, url, datePublished, dateModified, image, author }) {
 	return {
 		'@context': 'https://schema.org',

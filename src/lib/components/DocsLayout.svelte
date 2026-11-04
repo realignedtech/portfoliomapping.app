@@ -5,6 +5,8 @@
 	import DocsArticle from './DocsArticle.svelte';
 	import DocsToc from './DocsToc.svelte';
 	import { PortfolioNav, PortfolioMapTitles } from '$lib/docs/nav.js';
+	import { canonicalUrlFor } from '$lib/seo/canonical.js';
+	import { techArticleSchema } from '$lib/seo/schema.js';
 
 	let {
 		meta = {},
@@ -44,11 +46,22 @@
 	const sectionLabel = 'Denkplan Portfolio Maps documentation';
 	let documentTitle = $derived(meta.title || currentTitle);
 	const productTitle = 'Denkplan Portfolio Maps for Jira';
+	let description = $derived(meta.description || `${currentTitle} documentation for ${productTitle}.`);
+	// Documentation pages read as articles to search engines; declare it so the
+	// page is eligible for the documentation rich result.
+	let jsonLd = $derived([
+		techArticleSchema({
+			headline: documentTitle,
+			description,
+			url: canonicalUrlFor($page.url.pathname)
+		})
+	]);
 </script>
 
 <SiteShell
-	headTitle={`${documentTitle} | ${productTitle} Documentation`}
-	description={meta.description || `${currentTitle} documentation for ${productTitle}.`}
+	headTitle={`${documentTitle} | Denkplan Portfolio Maps`}
+	{description}
+	{jsonLd}
 	navTitle={title}
 	{demoLink}
 	{marketplaceLink}
