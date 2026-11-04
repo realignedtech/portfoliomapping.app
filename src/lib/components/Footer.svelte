@@ -50,6 +50,12 @@
 				<h2 class="mb-4 text-sm font-semibold uppercase tracking-wider text-white">Company</h2>
 				<ul class="space-y-3 text-sm text-white/75">
 					<li>
+						<a class="transition-colors hover:text-white" href="/about">About</a>
+					</li>
+					<li>
+						<a class="transition-colors hover:text-white" href="/contact">Contact</a>
+					</li>
+					<li>
 						<a class="transition-colors hover:text-white" href="/trust">Trust Center</a>
 					</li>
 					<li>

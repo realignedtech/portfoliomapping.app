@@ -126,3 +126,41 @@ export function faqSchema(items) {
 		}))
 	};
 }
+
+export function personSchema({ name, jobTitle, url, description }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name,
+		...(jobTitle ? { jobTitle } : {}),
+		...(url ? { url } : {}),
+		...(description ? { description } : {}),
+		worksFor: { '@id': `${siteOrigin}/#organization` }
+	};
+}
+
+export function aboutPageSchema({ name, description, url }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'AboutPage',
+		name,
+		description,
+		url,
+		inLanguage: 'en',
+		isPartOf: { '@id': `${siteOrigin}/#website` },
+		about: { '@id': `${siteOrigin}/#organization` }
+	};
+}
+
+export function contactPageSchema({ name, description, url }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'ContactPage',
+		name,
+		description,
+		url,
+		inLanguage: 'en',
+		isPartOf: { '@id': `${siteOrigin}/#website` },
+		about: { '@id': `${siteOrigin}/#organization` }
+	};
+}
