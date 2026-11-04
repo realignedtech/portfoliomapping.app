@@ -1,28 +1,22 @@
 <script>
-	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { canonicalUrlFor, siteOrigin } from '$lib/seo/canonical.js';
-	
-	let { title, description } = $props();
+	import { organizationSchema, websiteSchema } from '$lib/seo/schema.js';
+
+	let {
+		title,
+		description,
+		ogType = 'website',
+		publishedTime = '',
+		modifiedTime = '',
+		image = `${siteOrigin}/DenkplanOG2.png`,
+		jsonLd = []
+	} = $props();
+
 	let canonicalUrl = $derived(canonicalUrlFor($page.url.pathname));
-	let shareImageUrl = `${siteOrigin}/DenkplanOG2.png`;
-	
-	onMount(() => {
-		if (title) {
-			document.title = title;
-		}
-		
-		// Set meta description
-		if (description) {
-			let metaDescription = document.querySelector('meta[name="description"]');
-			if (!metaDescription) {
-				metaDescription = document.createElement('meta');
-				metaDescription.name = 'description';
-				document.head.appendChild(metaDescription);
-			}
-			metaDescription.content = description;
-		}
-	});
+	let structuredData = $derived([organizationSchema, websiteSchema, ...jsonLd]);
+	let defaultImage = `${siteOrigin}/DenkplanOG2.png`;
+	let isDefaultImage = $derived(image === defaultImage);
 </script>
 
 <svelte:head>
@@ -31,17 +25,33 @@
 		<meta property="og:title" content={title} />
 		<meta name="twitter:title" content={title} />
 	{/if}
-	
+
 	{#if description}
 		<meta name="description" content={description} />
 		<meta property="og:description" content={description} />
 		<meta name="twitter:description" content={description} />
 	{/if}
-	
+
 	<link rel="canonical" href={canonicalUrl} />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={ogType} />
+	<meta property="og:site_name" content="Denkplan Portfolio Maps for Jira" />
+	<meta property="og:locale" content="en_US" />
 	<meta property="og:url" content={canonicalUrl} />
-	<meta property="og:image" content={shareImageUrl} />
+	<meta property="og:image" content={image} />
+	{#if isDefaultImage}
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+	{/if}
+	{#if ogType === 'article' && publishedTime}
+		<meta property="article:published_time" content={publishedTime} />
+	{/if}
+	{#if ogType === 'article' && modifiedTime}
+		<meta property="article:modified_time" content={modifiedTime} />
+	{/if}
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content={shareImageUrl} />
+	<meta name="twitter:image" content={image} />
+
+	{#each structuredData as data}
+		{@html `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`}
+	{/each}
 </svelte:head>

@@ -7,7 +7,8 @@
 //  3. robots.txt is real, points at the sitemap, and does not block the site
 //  4. every internal link resolves to an exported page
 //  5. every referenced local asset exists in the export
-//  6. the homepage carries a parseable SoftwareApplication JSON-LD node
+//  6. the homepage carries Organization + WebSite + SoftwareApplication JSON-LD,
+//     and the blog article carries Article JSON-LD with article:published_time
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -93,23 +94,59 @@ const notFoundPath = join(BUILD, '404.html');
 if (!existsSync(notFoundPath)) problem('404.html missing from export');
 else if (!/noindex/.test(readFileSync(notFoundPath, 'utf8'))) problem('404.html is missing its noindex directive');
 
-// SoftwareApplication JSON-LD on the homepage
+// Structured data on the homepage: Organization + WebSite (emitted on every page
+// by Header.svelte) plus a SoftwareApplication for the product.
 const homeHtml = readFileSync(join(BUILD, 'index.html'), 'utf8');
 const jsonLdMatches = [...homeHtml.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)];
 if (jsonLdMatches.length === 0) {
 	problem('homepage has no JSON-LD structured data');
 } else {
+	const nodes = [];
 	for (const match of jsonLdMatches) {
 		try {
-			const node = JSON.parse(match[1]);
-			if (node['@type'] !== 'SoftwareApplication') problem(`homepage JSON-LD has unexpected @type ${node['@type']}`);
-			if (node.name !== 'Denkplan Portfolio Maps for Jira') problem(`homepage JSON-LD has unexpected name "${node.name}"`);
-			if (node.author?.name !== 'Realigned Technologies') problem('homepage JSON-LD does not name Realigned Technologies as author');
-			if (!node.sameAs?.includes('https://marketplace.atlassian.com/apps/1226527')) problem('homepage JSON-LD does not reference the Marketplace listing');
+			nodes.push(JSON.parse(match[1]));
 		} catch (error) {
 			problem(`homepage JSON-LD is not parseable: ${error.message}`);
 		}
 	}
+	const byType = (type) => nodes.filter((node) => node['@type'] === type);
+
+	const organization = byType('Organization');
+	if (organization.length !== 1) problem(`homepage JSON-LD: ${organization.length} Organization nodes (expected 1)`);
+	else if (organization[0].name !== 'Realigned Technologies Ltd') problem(`homepage Organization name is "${organization[0].name}"`);
+
+	const website = byType('WebSite');
+	if (website.length !== 1) problem(`homepage JSON-LD: ${website.length} WebSite nodes (expected 1)`);
+
+	const app = byType('SoftwareApplication');
+	if (app.length !== 1) problem(`homepage JSON-LD: ${app.length} SoftwareApplication nodes (expected 1)`);
+	else {
+		const node = app[0];
+		if (node.name !== 'Denkplan Portfolio Maps for Jira') problem(`homepage SoftwareApplication name "${node.name}"`);
+		if (!node.sameAs?.includes('https://marketplace.atlassian.com/apps/1226527')) problem('homepage SoftwareApplication does not reference the Marketplace listing');
+		if (node.publisher?.['@id'] !== `${ORIGIN}/#organization`) problem('homepage SoftwareApplication publisher does not reference the Realigned organization');
+	}
+}
+
+// Article structured data on the blog article: Article JSON-LD plus the
+// article OpenGraph metadata that a news/blog card relies on.
+const articlePath = join(BUILD, 'articles/portfolio-management-with-jira.html');
+if (existsSync(articlePath)) {
+	const html = readFileSync(articlePath, 'utf8');
+	const nodes = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)]
+		.map((match) => {
+			try {
+				return JSON.parse(match[1]);
+			} catch {
+				return null;
+			}
+		})
+		.filter(Boolean);
+	if (!nodes.some((node) => node['@type'] === 'Article')) problem('article page has no Article JSON-LD');
+	if (!/<meta property="og:type" content="article"/.test(html)) problem('article page og:type is not article');
+	if (!/<meta property="article:published_time"/.test(html)) problem('article page is missing article:published_time');
+} else {
+	problem('article page is missing from the export');
 }
 
 if (failures.length) {

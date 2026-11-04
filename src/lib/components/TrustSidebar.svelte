@@ -5,7 +5,7 @@
 <div>
 	<div class="mb-5 px-2">
 		<p class="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">Trust Center</p>
-		<h2 class="mt-1 text-base font-semibold text-white">Policies & practices</h2>
+		<h2 class="mt-1 text-base font-semibold text-[var(--text-primary)]">Policies & practices</h2>
 	</div>
 
 	<nav aria-label="Trust Center pages" class="space-y-1">
@@ -19,9 +19,9 @@
 		{/each}
 	</nav>
 
-	<div class="mt-6 border-t border-white/10 px-2 pt-5">
+	<div class="mt-6 border-t border-[var(--border-subtle)] px-2 pt-5">
 		<p class="text-xs leading-5 text-[var(--text-muted)]">Have a security concern?</p>
-		<a href="mailto:info@realigned.io" class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-200 hover:text-white">
+		<a href="mailto:info@realigned.io" class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">
 			Contact Realigned
 			<svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12 4 4L19 6" /></svg>
 		</a>
@@ -43,6 +43,6 @@
 		transition: background 160ms ease, color 160ms ease;
 	}
 
-	.trust-nav-row:hover { background: rgba(255, 255, 255, 0.055); color: white; }
-	.trust-nav-row.active { background: rgba(56, 189, 248, 0.1); box-shadow: inset 2px 0 #38bdf8; color: #e0f2fe; }
+	.trust-nav-row:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
+	.trust-nav-row.active { background: var(--action-soft); box-shadow: inset 2px 0 var(--accent-sky-soft); color: var(--accent-cyan); }
 </style>

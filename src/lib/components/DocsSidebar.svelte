@@ -39,9 +39,9 @@
 	<div class="mb-5 flex items-center justify-between gap-3">
 		<div>
 			<p class="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">Browse</p>
-			<h2 class="mt-1 text-base font-semibold text-white">Documentation</h2>
+			<h2 class="mt-1 text-base font-semibold text-[var(--text-primary)]">Documentation</h2>
 		</div>
-		<span class="rounded-full border border-sky-300/20 bg-sky-300/10 px-2.5 py-1 text-[0.68rem] font-semibold text-sky-200">
+		<span class="rounded-full border border-[#0369a1]/20 bg-[var(--action-soft)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--accent-cyan)]">
 			Guide
 		</span>
 	</div>
@@ -67,7 +67,7 @@
 				</a>
 
 				{#if item.children && (active === item.link || query)}
-					<div class="ml-3 mt-1 space-y-0.5 border-l border-white/10 pl-3">
+					<div class="ml-3 mt-1 space-y-0.5 border-l border-[var(--border-subtle)] pl-3">
 						{#each item.children as child}
 							<a
 								href={childHref(item, child)}
@@ -94,17 +94,17 @@
 		display: flex;
 		align-items: center;
 		gap: 0.65rem;
-		border: 1px solid rgba(156, 180, 211, 0.2);
+		border: 1px solid var(--border-subtle);
 		border-radius: 0.55rem;
-		background: rgba(3, 25, 55, 0.42);
+		background: var(--bg-elevated);
 		padding: 0.65rem 0.75rem;
 		color: var(--text-muted);
 		transition: border-color 160ms ease, background 160ms ease;
 	}
 
 	.search-field:focus-within {
-		border-color: rgba(56, 189, 248, 0.55);
-		background: rgba(3, 25, 55, 0.64);
+		border-color: rgba(3, 105, 161, 0.55);
+		background: var(--bg-surface);
 	}
 
 	.search-field input {
@@ -113,12 +113,11 @@
 		border: 0;
 		outline: 0;
 		background: transparent;
-		color: white;
+		color: var(--text-primary);
 		font-size: 0.84rem;
 	}
 
 	.search-field input::placeholder { color: var(--text-muted); }
-	.search-field input::-webkit-search-cancel-button { filter: invert(1); opacity: 0.55; }
 
 	.nav-row,
 	.child-row {
@@ -135,9 +134,9 @@
 	}
 
 	.nav-row:hover,
-	.child-row:hover { background: rgba(255, 255, 255, 0.055); color: white; }
+	.child-row:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
 	.nav-row.active,
-	.child-row.active { background: rgba(56, 189, 248, 0.1); color: #e0f2fe; }
-	.nav-row.active { box-shadow: inset 2px 0 #38bdf8; }
+	.child-row.active { background: var(--action-soft); color: var(--accent-cyan); }
+	.nav-row.active { box-shadow: inset 2px 0 var(--accent-sky-soft); }
 	.child-row { padding-block: 0.46rem; font-size: 0.79rem; }
 </style>

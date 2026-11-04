@@ -2,6 +2,7 @@
 	import SiteShell from '$lib/components/SiteShell.svelte';
 	import DottedClouds from '$lib/components/DottedClouds.svelte';
 	import PortfolioMapDemo from '$lib/components/PortfolioMapDemo.svelte';
+	import { softwareApplicationSchema } from '$lib/seo/schema.js';
 
 	const MARKETPLACE_LINK = 'https://marketplace.atlassian.com/apps/1226527';
 	const DEMO_LINK = 'https://demo.userstorymap.net/projects/DPFJ?selectedItem=tech.realigned.portfoliomap:sidebar-item#/map/1663578993374';
@@ -9,35 +10,23 @@
 
 	// Stated in machine-readable form so search engines and AI systems attribute
 	// the product to the right developer. Mirrors the Organization node on realigned.io.
-	const softwareApplicationJson = JSON.stringify({
-		'@context': 'https://schema.org',
-		'@type': 'SoftwareApplication',
-		name: 'Denkplan Portfolio Maps for Jira',
-		url: 'https://portfoliomapping.app/',
-		description:
-			'Connect goals, initiatives, releases, and Jira delivery work in one visual portfolio map.',
-		image: 'https://portfoliomapping.app/DenkplanOG2.png',
-		applicationCategory: 'BusinessApplication',
-		operatingSystem: 'Atlassian Jira',
-		author: {
-			'@type': 'Organization',
-			name: 'Realigned Technologies',
-			url: 'https://realigned.io/'
-		},
-		publisher: {
-			'@type': 'Organization',
-			name: 'Realigned Technologies',
-			url: 'https://realigned.io/'
-		},
-		sameAs: ['https://marketplace.atlassian.com/apps/1226527'],
-		featureList: [
-			'Portfolio maps across multiple Jira projects',
-			'Flexible hierarchy with custom issue types and levels',
-			'Swimlanes by release, sprint, goal, or custom field',
-			'Direct issue editing from the map',
-			'PNG export'
-		]
-	});
+	const softwareApplicationJson = JSON.stringify(
+		softwareApplicationSchema({
+			name: 'Denkplan Portfolio Maps for Jira',
+			description:
+				'Connect goals, initiatives, releases, and Jira delivery work in one visual portfolio map.',
+			url: 'https://portfoliomapping.app/',
+			image: 'https://portfoliomapping.app/DenkplanOG2.png',
+			sameAs: ['https://marketplace.atlassian.com/apps/1226527'],
+			featureList: [
+				'Portfolio maps across multiple Jira projects',
+				'Flexible hierarchy with custom issue types and levels',
+				'Swimlanes by release, sprint, goal, or custom field',
+				'Direct issue editing from the map',
+				'PNG export'
+			]
+		})
+	);
 
 	const capabilities = [
 		{ title: 'See strategy and delivery together', text: 'Connect high-level goals and initiatives to the Jira work that carries them out.', href: '/docs/goals' },
@@ -82,8 +71,8 @@
 			</div>
 		</section>
 
-		<section aria-label="Product highlights" class="border-b border-white/10 bg-[var(--bg-base)] py-10">
-			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-9 gap-y-4 px-4 text-sm font-semibold text-white/70 sm:px-6 sm:text-base lg:px-8">
+		<section aria-label="Product highlights" class="border-b border-[var(--border-subtle)] bg-[var(--bg-base)] py-10">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-9 gap-y-4 px-4 text-sm font-semibold text-[var(--text-secondary)] sm:px-6 sm:text-base lg:px-8">
 				<span class="inline-flex items-center gap-2"><i class="status-check">✓</i> Runs inside Jira</span>
 				<span class="inline-flex items-center gap-2"><i class="status-check">✓</i> Multiple projects</span>
 				<span class="inline-flex items-center gap-2"><i class="status-check">✓</i> Flexible hierarchy</span>
@@ -91,22 +80,22 @@
 			</div>
 		</section>
 
-		<section aria-labelledby="capabilities-title" class="realigned-dark-gradient border-b border-white/10 py-24">
+		<section aria-labelledby="capabilities-title" class="realigned-band border-b border-[var(--border-subtle)] py-24">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 				<div class="mx-auto max-w-3xl text-center">
 					<p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Portfolio planning in context</p>
-					<h2 id="capabilities-title" class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Keep the big picture connected to live Jira work.</h2>
+					<h2 id="capabilities-title" class="text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">Keep the big picture connected to live Jira work.</h2>
 					<p class="mt-5 text-lg leading-relaxed text-[var(--text-secondary)]">Build a portfolio view around the way your organization already plans, then update the work directly from the map.</p>
 				</div>
 				<div class="mt-14 grid gap-5 md:grid-cols-3">
 					{#each capabilities as capability}
 						<article class="realigned-card capability-card flex flex-col rounded-lg p-7">
-							<div class="mb-6 flex h-11 w-11 items-center justify-center rounded-md bg-sky-300/10 text-sky-200">
+							<div class="mb-6 flex h-11 w-11 items-center justify-center rounded-md bg-[var(--action-soft)] text-[var(--accent-cyan)]">
 								<svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12 4 4L19 6" /></svg>
 							</div>
-							<h3 class="text-xl font-semibold text-white">{capability.title}</h3>
+							<h3 class="text-xl font-semibold text-[var(--text-primary)]">{capability.title}</h3>
 							<p class="mt-3 flex-1 leading-relaxed text-[var(--text-secondary)]">{capability.text}</p>
-							<a href={capability.href} class="mt-6 font-semibold text-sky-200 hover:text-white">Read the guide <span aria-hidden="true">→</span></a>
+							<a href={capability.href} class="mt-6 font-semibold text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">Read the guide <span aria-hidden="true">→</span></a>
 						</article>
 					{/each}
 				</div>
@@ -117,7 +106,7 @@
 			<div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
 				<div>
 					<p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Built around your Jira setup</p>
-					<h2 id="workflow-title" class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Map the portfolio without rebuilding the system behind it.</h2>
+					<h2 id="workflow-title" class="text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl">Map the portfolio without rebuilding the system behind it.</h2>
 					<p class="mt-5 text-lg leading-relaxed text-[var(--text-secondary)]">Start from an existing board or create a static map. Configure the hierarchy, add goals above the portfolio, and choose releases, sprints, or custom fields for the swimlanes below it.</p>
 					<a href="/docs" class="realigned-secondary-button mt-8">Read the documentation</a>
 				</div>
@@ -145,7 +134,7 @@
 
 <style>
 	.wave-glow { position: absolute; left: -10%; right: -10%; bottom: -24%; height: 45%; background: radial-gradient(ellipse at center, rgba(255,255,255,.25) 0%, rgba(255,255,255,.06) 42%, transparent 72%); filter: blur(16px); pointer-events: none; }
-	.status-check { display: inline-grid; width: 1.25rem; height: 1.25rem; place-items: center; border-radius: 999px; background: rgba(125,211,252,.14); color: #bae6fd; font-size: .7rem; font-style: normal; }
+	.status-check { display: inline-grid; width: 1.25rem; height: 1.25rem; place-items: center; border-radius: 999px; background: var(--action-soft); color: var(--accent-cyan); font-size: .7rem; font-style: normal; }
 	.capability-card { transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; }
-	.capability-card:hover { transform: translateY(-4px); border-color: rgba(56,189,248,.38); background: var(--bg-surface-hover); }
+	.capability-card:hover { transform: translateY(-4px); border-color: rgba(3, 105, 161, 0.34); background: var(--bg-surface-hover); }
 </style>

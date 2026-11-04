@@ -30,7 +30,7 @@
 {#if headings.length}
 	<nav aria-label="On this page">
 		<p class="mb-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">On this page</p>
-		<ul class="space-y-1 border-l border-white/10">
+		<ul class="space-y-1 border-l border-[var(--border-subtle)]">
 			{#each headings as heading}
 				<li class:pl-3={heading.level === 3}>
 					<a
@@ -57,6 +57,6 @@
 		transition: color 160ms ease, border-color 160ms ease;
 	}
 
-	.toc-link:hover { color: white; }
-	.toc-link.active { border-left-color: #38bdf8; color: #bae6fd; }
+	.toc-link:hover { color: var(--text-primary); }
+	.toc-link.active { border-left-color: var(--accent-cyan); color: var(--accent-cyan); }
 </style>

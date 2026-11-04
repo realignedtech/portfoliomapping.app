@@ -18,7 +18,7 @@
 					<td class="border border-gray-300 p-4">AIS-01.2</td>
 					<td class="border border-gray-300 p-4">Do you use an automated source code analysis tool to detect security defects in code prior to production?</td>
 					<td class="border border-gray-300 p-4">Yes</td>
-					<td class="border border-gray-300 p-4">We automate the detection & update of vulnerable dependencies.&nbsp;<a href="/trust/security-scanning" class="font-semibold no-underline text-sky-600 hover:text-sky-500">Review our security scanning practices</a>.</td>
+					<td class="border border-gray-300 p-4">We automate the detection & update of vulnerable dependencies.&nbsp;<a href="/trust/security-scanning" class="font-semibold no-underline text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">Review our security scanning practices</a>.</td>
 				</tr>
 				<tr>
 					<td class="border border-gray-300 p-4"></td>
@@ -58,7 +58,7 @@
 					<td class="border border-gray-300 p-4">AAC-02.2</td>
 					<td class="border border-gray-300 p-4">Do you conduct network penetration tests of your cloud service infrastructure at least annually?</td>
 					<td class="border border-gray-300 p-4">Yes</td>
-					<td class="border border-gray-300 p-4">Find out more details about our Bug Bounty Program and other initiatives in the <a href="/trust" class="font-semibold no-underline text-sky-600 hover:text-sky-500">Trust Center</a>.</td>
+					<td class="border border-gray-300 p-4">Find out more details about our Bug Bounty Program and other initiatives in the <a href="/trust" class="font-semibold no-underline text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">Trust Center</a>.</td>
 				</tr>
 				<tr>
 					<td class="border border-gray-300 p-4"></td>
@@ -66,7 +66,7 @@
 					<td class="border border-gray-300 p-4">AAC-02.3</td>
 					<td class="border border-gray-300 p-4">Do you conduct application penetration tests of your cloud infrastructure regularly as prescribed by industry best practices and guidance?</td>
 					<td class="border border-gray-300 p-4">Yes</td>
-					<td class="border border-gray-300 p-4">Find out more details about our Bug Bounty Program and other initiatives in the <a href="/trust" class="font-semibold no-underline text-sky-600 hover:text-sky-500">Trust Center</a>.</td>
+					<td class="border border-gray-300 p-4">Find out more details about our Bug Bounty Program and other initiatives in the <a href="/trust" class="font-semibold no-underline text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">Trust Center</a>.</td>
 				</tr>
 				<tr>
 					<td class="border border-gray-300 p-4"></td>
@@ -162,7 +162,7 @@
 					<td class="border border-gray-300 p-4">GRM-06.1</td>
 					<td class="border border-gray-300 p-4">Are your information security policies and procedures made available to all impacted personnel and business partners, authorized by accountable business role/function and supported by the information security management program as per industry best practices (e.g. ISO 27001, SOC 2)?</td>
 					<td class="border border-gray-300 p-4">Yes</td>
-					<td class="border border-gray-300 p-4">You can find our public Information Security Policy in the <a href="/trust" class="font-semibold no-underline text-sky-600 hover:text-sky-500">Trust Center</a></td>
+					<td class="border border-gray-300 p-4">You can find our public Information Security Policy in the <a href="/trust" class="font-semibold no-underline text-[var(--accent-cyan)] hover:text-[var(--action-hover)]">Trust Center</a></td>
 				</tr>
 				<tr>
 					<td class="border border-gray-300 p-4"></td>

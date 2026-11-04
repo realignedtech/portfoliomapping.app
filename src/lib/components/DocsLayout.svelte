@@ -65,7 +65,7 @@
 				aria-controls="docs-navigation"
 			>
 				<span class="flex items-center gap-2">
-					<svg class="h-4 w-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+					<svg class="h-4 w-4 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
 					Browse documentation
 				</span>
 				<svg class:rotate-180={mobileMenuOpen} class="h-4 w-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6" /></svg>
@@ -99,9 +99,9 @@
 <style>
 	.docs-shell {
 		min-height: 58vh;
-		border-top: 1px solid rgba(156, 180, 211, 0.08);
+		border-top: 1px solid var(--border-subtle);
 		background:
-			radial-gradient(circle at 68% 0%, rgba(22, 97, 172, 0.13), transparent 34rem),
+			radial-gradient(circle at 68% 0%, rgba(125, 211, 252, 0.16), transparent 34rem),
 			var(--bg-base);
 	}
 
@@ -117,18 +117,18 @@
 		width: 100%;
 		align-items: center;
 		justify-content: space-between;
-		border: 1px solid rgba(156, 180, 211, 0.18);
+		border: 1px solid var(--border-subtle);
 		border-radius: 0.6rem;
 		background: var(--bg-surface);
 		padding: 0.8rem 0.9rem;
-		color: white;
+		color: var(--text-primary);
 		font-size: 0.86rem;
 		font-weight: 600;
 	}
 
 	.mobile-menu-panel {
 		margin: 0.65rem 0 1rem;
-		border: 1px solid rgba(156, 180, 211, 0.16);
+		border: 1px solid var(--border-subtle);
 		border-radius: 0.65rem;
 		background: var(--bg-surface);
 		padding: 1rem;

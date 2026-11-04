@@ -49,7 +49,7 @@
 
 <article class="docs-article">
 	<header class="docs-heading">
-		<div class="mb-2 flex items-center gap-2 text-xs font-semibold text-sky-200">
+		<div class="mb-2 flex items-center gap-2 text-xs font-semibold text-[var(--accent-cyan)]">
 			<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.25v13m0-13C10.83 5.48 9.25 5 7.5 5S4.17 5.48 3 6.25v13C4.17 18.48 5.75 18 7.5 18s3.33.48 4.5 1.25m0-13C13.17 5.48 14.75 5 16.5 5s3.33.48 4.5 1.25v13C19.83 18.48 17.25 18 15.5 18s-2.33.48-3.5 1.25" />
 			</svg>
@@ -67,23 +67,23 @@
 	.docs-article {
 		min-width: 0;
 		overflow: hidden;
-		border: 1px solid rgba(156, 180, 211, 0.16);
+		border: 1px solid var(--border-subtle);
 		border-radius: 0.75rem;
 		background: var(--bg-surface);
-		box-shadow: 0 20px 50px rgba(2, 18, 42, 0.18);
+		box-shadow: 0 22px 50px -38px rgba(3, 105, 161, 0.45);
 	}
 
 	.docs-heading {
-		border-bottom: 1px solid rgba(156, 180, 211, 0.14);
+		border-bottom: 1px solid var(--border-subtle);
 		padding: 2rem 2.25rem 1.65rem;
-		background: linear-gradient(135deg, rgba(20, 70, 126, 0.85), rgba(12, 52, 104, 0.35));
+		background: linear-gradient(135deg, var(--bg-elevated), rgba(255, 255, 255, 0));
 	}
 
 	.docs-heading h1 {
 		margin: 0;
-		color: white;
+		color: var(--text-primary);
 		font-size: clamp(1.8rem, 3vw, 2.45rem);
-		font-weight: 650;
+		font-weight: 700;
 		letter-spacing: -0.025em;
 		line-height: 1.15;
 	}
@@ -99,8 +99,8 @@
 	:global(.docs-content h2),
 	:global(.docs-content h3),
 	:global(.docs-content h4) {
-		color: white;
-		font-weight: 650;
+		color: var(--text-primary);
+		font-weight: 700;
 		letter-spacing: -0.018em;
 		line-height: 1.25;
 		scroll-margin-top: 9rem;
@@ -113,9 +113,9 @@
 	:global(.docs-content h2:first-child),
 	:global(.docs-content h3:first-child) { margin-top: 0; }
 	:global(.docs-content p) { margin: 0.9rem 0; }
-	:global(.docs-content strong) { color: #f1f7ff; font-weight: 600; }
-	:global(.docs-content a) { color: #7dd3fc; font-weight: 550; text-decoration: underline; text-decoration-color: rgba(125, 211, 252, 0.35); text-underline-offset: 3px; }
-	:global(.docs-content a:hover) { color: #bae6fd; text-decoration-color: currentColor; }
+	:global(.docs-content strong) { color: var(--text-primary); font-weight: 600; }
+	:global(.docs-content a) { color: var(--accent-cyan); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(3, 105, 161, 0.35); text-underline-offset: 3px; }
+	:global(.docs-content a:hover) { color: var(--action-hover); text-decoration-color: currentColor; }
 	:global(.docs-content h2 a),
 	:global(.docs-content h3 a),
 	:global(.docs-content h4 a) { color: inherit; font-weight: inherit; text-decoration: none; }
@@ -124,18 +124,21 @@
 	:global(.docs-content h4 a:hover) { color: inherit; text-decoration: none; }
 	:global(.docs-content ul),
 	:global(.docs-content ol) { margin: 1rem 0; padding-left: 1.5rem; }
+	:global(.docs-content ul) { list-style: disc; }
+	:global(.docs-content ul ul) { list-style: circle; }
+	:global(.docs-content ol) { list-style: decimal; }
 	:global(.docs-content li) { margin: 0.35rem 0; padding-left: 0.2rem; }
-	:global(.docs-content li::marker) { color: #38bdf8; }
-	:global(.docs-content hr) { margin: 2.25rem 0; border: 0; border-top: 1px solid rgba(156, 180, 211, 0.16); }
-	:global(.docs-content blockquote) { margin: 1.4rem 0; border-left: 3px solid #38bdf8; border-radius: 0 0.5rem 0.5rem 0; background: rgba(56, 189, 248, 0.07); padding: 0.75rem 1rem; color: #c9ddf5; }
-	:global(.docs-content code) { border: 1px solid rgba(156, 180, 211, 0.15); border-radius: 0.3rem; background: rgba(3, 25, 55, 0.6); padding: 0.13rem 0.35rem; color: #bae6fd; font-size: 0.86em; }
-	:global(.docs-content pre) { overflow-x: auto; margin: 1.4rem 0; border: 1px solid rgba(156, 180, 211, 0.14); border-radius: 0.6rem; background: #061d3d; padding: 1.1rem 1.2rem; }
+	:global(.docs-content li::marker) { color: var(--accent-cyan); font-weight: 600; }
+	:global(.docs-content hr) { margin: 2.25rem 0; border: 0; border-top: 1px solid var(--border-subtle); }
+	:global(.docs-content blockquote) { margin: 1.4rem 0; border-left: 3px solid var(--accent-sky-soft); border-radius: 0 0.5rem 0.5rem 0; background: var(--action-soft); padding: 0.75rem 1rem; color: var(--text-secondary); }
+	:global(.docs-content code) { border: 1px solid var(--border-subtle); border-radius: 0.3rem; background: var(--bg-elevated); padding: 0.13rem 0.35rem; color: var(--accent-cyan); font-size: 0.86em; }
+	:global(.docs-content pre) { overflow-x: auto; margin: 1.4rem 0; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 0.6rem; background: #061d3d; padding: 1.1rem 1.2rem; }
 	:global(.docs-content pre code) { border: 0; background: transparent; padding: 0; color: #dbeafe; }
 	:global(.docs-content table) { display: block; overflow-x: auto; width: 100%; margin: 1.5rem 0; border-collapse: collapse; }
 	:global(.docs-content th),
-	:global(.docs-content td) { border: 1px solid rgba(156, 180, 211, 0.16); padding: 0.65rem 0.8rem; text-align: left; }
-	:global(.docs-content th) { background: rgba(3, 25, 55, 0.35); color: white; font-weight: 600; }
-	:global(.docs-content img) { max-width: 100%; height: auto; margin: 1.6rem auto; border: 1px solid rgba(156, 180, 211, 0.2); border-radius: 0.6rem; box-shadow: 0 14px 30px rgba(2, 18, 42, 0.28); cursor: zoom-in; }
+	:global(.docs-content td) { border: 1px solid var(--border-subtle); padding: 0.65rem 0.8rem; text-align: left; }
+	:global(.docs-content th) { background: var(--bg-surface-hover); color: var(--text-primary); font-weight: 600; }
+	:global(.docs-content img) { max-width: 100%; height: auto; margin: 1.6rem auto; border: 1px solid var(--border-subtle); border-radius: 0.6rem; box-shadow: 0 16px 36px -26px rgba(3, 105, 161, 0.5); cursor: zoom-in; }
 
 	.blanket {
 		position: fixed;
