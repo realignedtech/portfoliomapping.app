@@ -48,12 +48,16 @@
 	const productTitle = 'Denkplan Portfolio Maps for Jira';
 	let description = $derived(meta.description || `${currentTitle} documentation for ${productTitle}.`);
 	// Documentation pages read as articles to search engines; declare it so the
-	// page is eligible for the documentation rich result.
+	// page is eligible for the documentation rich result. Article.datePublished
+	// is required, so the same date is shown to the reader (content/date-agreement).
+	const DOCS_UPDATED = '2026-11-04T00:00:00.000Z';
 	let jsonLd = $derived([
 		techArticleSchema({
 			headline: documentTitle,
 			description,
-			url: canonicalUrlFor($page.url.pathname)
+			url: canonicalUrlFor($page.url.pathname),
+			datePublished: DOCS_UPDATED,
+			dateModified: DOCS_UPDATED
 		})
 	]);
 </script>
@@ -95,7 +99,7 @@
 					</div>
 				</aside>
 
-				<DocsArticle title={currentTitle} {sectionLabel} onheadingschange={(value) => (headings = value)}>
+				<DocsArticle title={currentTitle} {sectionLabel} updated={DOCS_UPDATED} onheadingschange={(value) => (headings = value)}>
 					{@render children()}
 				</DocsArticle>
 

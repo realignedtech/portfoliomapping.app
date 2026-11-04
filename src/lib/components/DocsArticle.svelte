@@ -2,6 +2,7 @@
 	let {
 		title = 'Documentation',
 		sectionLabel = 'Denkplan Portfolio Maps documentation',
+		updated = '',
 		onheadingschange = () => {},
 		children
 	} = $props();
@@ -56,6 +57,9 @@
 			{sectionLabel}
 		</div>
 		<h1>{title}</h1>
+		{#if updated}
+			<p class="mt-3 text-sm text-[var(--text-muted)]">Last updated <time datetime={updated}>{new Date(updated).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+		{/if}
 	</header>
 
 	<div bind:this={contentElement} class="docs-content">
